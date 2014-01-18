@@ -1,0 +1,6 @@
+C:\Users\George\Documents\SharpDevelop Projects\PeerToPeerChat\PeerToPeerChat\bin\Release\PeerToPeerChat.exe
+C:\Users\George\Documents\SharpDevelop Projects\PeerToPeerChat\PeerToPeerChat\obj\x86\Release\ResolveAssemblyReference.cache
+C:\Users\George\Documents\SharpDevelop Projects\PeerToPeerChat\PeerToPeerChat\obj\x86\Release\PeerToPeerChat.ChatForm.resources
+C:\Users\George\Documents\SharpDevelop Projects\PeerToPeerChat\PeerToPeerChat\obj\x86\Release\PeerToPeerChat.LoginForm.resources
+C:\Users\George\Documents\SharpDevelop Projects\PeerToPeerChat\PeerToPeerChat\obj\x86\Release\PeerToPeerChat.csproj.GenerateResource.Cache
+C:\Users\George\Documents\SharpDevelop Projects\PeerToPeerChat\PeerToPeerChat\obj\x86\Release\PeerToPeerChat.exe

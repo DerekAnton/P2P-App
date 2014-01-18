@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="UTF-8"?><?xml-stylesheet type='text/xsl' href='_UpgradeReport_Files/UpgradeReport.xslt'?><UpgradeLog>
+<Properties><Property Name="Solution" Value="PeerToPeerChat">
+</Property><Property Name="Solution File" Value="G:\Archives\Dropbox\Public\GitHub\Chat\PeerToPeerChat.sln">
+</Property><Property Name="Date" Value="Saturday, January 18, 2014">
+</Property><Property Name="Time" Value="17:13 PM">
+</Property></Properties><Event ErrorLevel="0" Project="" Source="PeerToPeerChat.sln" Description="File successfully backed up as G:\Archives\Dropbox\Public\GitHub\Chat\Backup\PeerToPeerChat.sln">
+</Event><Event ErrorLevel="0" Project="PeerToPeerChat" Source="PeerToPeerChat\PeerToPeerChat.csproj" Description="Project file successfully backed up as G:\Archives\Dropbox\Public\GitHub\Chat\Backup\PeerToPeerChat\PeerToPeerChat.csproj">
+</Event><Event ErrorLevel="0" Project="PeerToPeerChat" Source="PeerToPeerChat\LoginForm.cs" Description="File successfully backed up as G:\Archives\Dropbox\Public\GitHub\Chat\Backup\PeerToPeerChat\LoginForm.cs">
+</Event><Event ErrorLevel="0" Project="PeerToPeerChat" Source="PeerToPeerChat\LoginForm.Designer.cs" Description="File successfully backed up as G:\Archives\Dropbox\Public\GitHub\Chat\Backup\PeerToPeerChat\LoginForm.Designer.cs">
+</Event><Event ErrorLevel="0" Project="PeerToPeerChat" Source="PeerToPeerChat\ChatForm.cs" Description="File successfully backed up as G:\Archives\Dropbox\Public\GitHub\Chat\Backup\PeerToPeerChat\ChatForm.cs">
+</Event><Event ErrorLevel="0" Project="PeerToPeerChat" Source="PeerToPeerChat\ChatForm.Designer.cs" Description="File successfully backed up as G:\Archives\Dropbox\Public\GitHub\Chat\Backup\PeerToPeerChat\ChatForm.Designer.cs">
+</Event><Event ErrorLevel="0" Project="PeerToPeerChat" Source="PeerToPeerChat\Program.cs" Description="File successfully backed up as G:\Archives\Dropbox\Public\GitHub\Chat\Backup\PeerToPeerChat\Program.cs">
+</Event><Event ErrorLevel="0" Project="PeerToPeerChat" Source="PeerToPeerChat\Properties\AssemblyInfo.cs" Description="File successfully backed up as G:\Archives\Dropbox\Public\GitHub\Chat\Backup\PeerToPeerChat\Properties\AssemblyInfo.cs">
+</Event><Event ErrorLevel="0" Project="PeerToPeerChat" Source="PeerToPeerChat\ChatForm.resx" Description="File successfully backed up as G:\Archives\Dropbox\Public\GitHub\Chat\Backup\PeerToPeerChat\ChatForm.resx">
+</Event><Event ErrorLevel="0" Project="PeerToPeerChat" Source="PeerToPeerChat\LoginForm.resx" Description="File successfully backed up as G:\Archives\Dropbox\Public\GitHub\Chat\Backup\PeerToPeerChat\LoginForm.resx">
+</Event><Event ErrorLevel="0" Project="PeerToPeerChat" Source="PeerToPeerChat\PeerToPeerChat.csproj" Description="Project converted successfully">
+</Event><Event ErrorLevel="3" Project="PeerToPeerChat" Source="PeerToPeerChat\PeerToPeerChat.csproj" Description="Converted">
+</Event><Event ErrorLevel="0" Project="" Source="PeerToPeerChat.sln" Description="Solution converted successfully">
+</Event><Event ErrorLevel="3" Project="" Source="PeerToPeerChat.sln" Description="Converted">
+</Event><Event ErrorLevel="0" Project="PeerToPeerChat" Source="PeerToPeerChat\PeerToPeerChat.csproj" Description="Scan complete: Upgrade not required for project files.">
+</Event></UpgradeLog>
