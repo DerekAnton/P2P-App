@@ -64,7 +64,7 @@ namespace PeerToPeerChat
 			this.tbSend.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
 			this.tbSend.Multiline = true;
 			this.tbSend.Name = "tbSend";
-			this.tbSend.Size = new System.Drawing.Size(615, 83);
+			this.tbSend.Size = new System.Drawing.Size(600, 74);
 			this.tbSend.TabIndex = 1;
 			// 
 			// btnSend
@@ -82,6 +82,7 @@ namespace PeerToPeerChat
 			// 
 			// ChatForm
 			// 
+			this.AllowDrop = true;
 			this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 16F);
 			this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
 			this.ClientSize = new System.Drawing.Size(715, 426);
@@ -92,6 +93,9 @@ namespace PeerToPeerChat
 			this.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
 			this.Name = "ChatForm";
 			this.Text = "Peer To Peer Chat";
+			this.DragDrop += new System.Windows.Forms.DragEventHandler(this.ChatFormDragDrop);
+			this.DragEnter += new System.Windows.Forms.DragEventHandler(this.ChatFormDragEnter);
+			this.FormClosing += new System.Windows.Forms.FormClosingEventHandler(this.ChatFormFormClosing);
 			this.ResumeLayout(false);
 			this.PerformLayout();
 		}
@@ -103,5 +107,8 @@ namespace PeerToPeerChat
 		{
 			
 		}
+
+		
+
 	}
 }
