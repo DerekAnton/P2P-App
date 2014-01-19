@@ -4,3 +4,4 @@ C:\Users\George\Documents\SharpDevelop Projects\PeerToPeerChat\PeerToPeerChat\ob
 C:\Users\George\Documents\SharpDevelop Projects\PeerToPeerChat\PeerToPeerChat\obj\x86\Release\PeerToPeerChat.LoginForm.resources
 C:\Users\George\Documents\SharpDevelop Projects\PeerToPeerChat\PeerToPeerChat\obj\x86\Release\PeerToPeerChat.csproj.GenerateResource.Cache
 C:\Users\George\Documents\SharpDevelop Projects\PeerToPeerChat\PeerToPeerChat\obj\x86\Release\PeerToPeerChat.exe
+C:\Users\George\Documents\SharpDevelop Projects\PeerToPeerChat\PeerToPeerChat\obj\x86\Release\PeerToPeerChat.WebView.resources

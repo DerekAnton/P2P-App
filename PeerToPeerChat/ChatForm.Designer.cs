@@ -53,6 +53,7 @@ namespace PeerToPeerChat
 			this.rtbChat.Size = new System.Drawing.Size(712, 330);
 			this.rtbChat.TabIndex = 0;
 			this.rtbChat.Text = "";
+			this.rtbChat.LinkClicked += new System.Windows.Forms.LinkClickedEventHandler(this.RtbChatLinkClicked);
 			// 
 			// tbSend
 			// 
