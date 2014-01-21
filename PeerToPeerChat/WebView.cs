@@ -38,7 +38,9 @@ namespace PeerToPeerChat
 		private void wb_DocumentCompleted(object sender, WebBrowserDocumentCompletedEventArgs e)
     {
       WebBrowser wb = sender as WebBrowser;
-  
+     
+     
+     
       // wb.Document is not null at this point
     }
 	}

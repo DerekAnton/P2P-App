@@ -164,6 +164,8 @@ namespace PeerToPeerChat
 			{
 			   	sTemp.TrimEnd('\r');
 			   	sTemp.TrimEnd('\n');
+			   	sTemp=sTemp.Replace("http://www.youtube.com/watch?v=","http://www.youtube.com/embed/");
+			   	sTemp+="?controls=1&showinfo=0&showsearch=0&modestbranding=1&rel=0&autoplay=1&autohide=1&iv_load_policy=3&version=2&start=0";
 			   	goURL(sTemp);
 			}
 			else
