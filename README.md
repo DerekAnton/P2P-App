@@ -1,4 +1,4 @@
-P2P-App
+Chromecast-Repo
 =======
 
-A peer-to-peer application that my dad and i have been playing around with.
+Playing with the chromecast with dad
