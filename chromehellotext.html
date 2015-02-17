@@ -211,6 +211,7 @@ function transcribe(words) {
 
 /////// GLOBALS  ///////
 var NextSequence =0;
+var MaxSequence=0;
 var funnyObjs = new Array();
 ////////////////////////
 
@@ -222,11 +223,19 @@ function titleAndPic(title, url)
 
 function makeSendHTML(funnyObj,height,width)
 {
-	sendCmd("<div style=\"position: relative; float: left; width: 1254px; height: 80px; background-color: black; color: white; \">"
+	var newHeight=height;
+	var newWidth=width;
+	if(height>620)
+		newHeight=620;
+	if(width>1280)
+		newWidth=1280
+
+	sendCmd("<div style=\"position: relative; float: left; width: 1254px; height: 50px; background-color: black; color: white; \">"
 	+ funnyObj.title 
 	+"</div><img src=\""
 	+ funnyObj.url + "?_=" + (new Date().getTime()) + 
-	"\" HEIGHT=\""+ height +"\" WIDTH=\""+width+"\"/>");
+	"\" HEIGHT=\""+ newHeight +"\" WIDTH=\""+newWidth+"\"/>");
+
 }
 
 function getPicURLs(amount) {
@@ -249,8 +258,10 @@ function getPicURLs(amount) {
 			appendMessage("IMG Load error: " + this.src);
 			NextSequence++;
 		}
-		
-		img.src = funnyObjs[NextSequence].url;	
+		if(NextSequence==MaxSequence)
+			appendMessage("Max Sequence reached: "+MaxSequence);
+		else
+			img.src = funnyObjs[NextSequence].url;	
 
 	//sendCmd("<img src=\""+funnyObjs[NextSequence++].url+"\" HEIGHT=\"700\" WIDTH=\"1280\"/>");
 	}
@@ -262,7 +273,7 @@ function initPicsArray(amount)
   {
 	$.each(data.data.children, function(i,item)
 	{ 
-		if(item.data.url.indexOf(".jpg")>0 || item.data.url.indexOf(".gif")>0 || item.data.url.indexOf(".png")>0)
+		if(item.data.url.indexOf(".jpg")>0 || (item.data.url.indexOf(".gif")>0 && item.data.url.indexOf(".gifv")==0) || item.data.url.indexOf(".png")>0)
 		{
 			if(item.data.title == null)
 			{
@@ -276,6 +287,7 @@ function initPicsArray(amount)
 	});
 
 	//send the first picture once the array has been filled
+	MaxSequence=funnyObjs.length;
 	makeSendHTML(funnyObjs[NextSequence],this.height,this.width);
 	NextSequence++;
   });
@@ -299,7 +311,7 @@ function initPicsArray(amount)
 <button type="button" accesskey="c" onclick="JavaScript:sendCmd('@clear');"><u>C</u>lear</button>
 <button type="button" accesskey="g" onclick="JavaScript:sendCmd('@debug');">Debu<u>g</u></button>
 <button type="button" accesskey="t" onclick="JavaScript:sendCmd('@test');"><u>T</u>est</button>
-<button type="button" accesskey="i" onclick="JavaScript:getPicURLs(200);">Redd<u>i</u>t</button>
+<button type="button" accesskey="i" onclick="JavaScript:getPicURLs(500);">Redd<u>i</u>t</button>
 
 </div>
 
