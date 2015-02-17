@@ -231,7 +231,14 @@ function getPicURLs(amount) {
 		img.onload = function() {
 		//<div style="position: fixed; top: 0px; left: 0px; width: 400px; background-color: black; color: white; ">hello</div>
 		//This gets the actual image dimensions first
-		sendCmd("<img src=\""+funnyObjs[NextSequence++].url+"\" HEIGHT=\""+ this.height +"\" WIDTH=\""+this.width+"\"/>");
+		
+		sendCmd("<div style=\"position: fixed; top: 4px; left: 26px; width: 1254px; background-color: black; color: white; \">"
+		+ funnyObjs[NextSequence].title 
+		+"</div><img src=\""
+		+ funnyObjs[NextSequence].url + 
+		"\" HEIGHT=\""+ this.height +"\" WIDTH=\""+this.width+"\"/>");
+		
+		NextSequence++;
 	}
 	img.src = funnyObjs[NextSequence++].url;	
 
