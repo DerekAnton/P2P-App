@@ -220,6 +220,15 @@ function titleAndPic(title, url)
 	this.url = url;
 }
 
+function makeSendHTML(funnyObj,height,width)
+{
+	sendCmd("<div style=\"position: relative; float: left; width: 1254px; height: 80px; background-color: black; color: white; \">"
+	+ funnyObj.title 
+	+"</div><img src=\""
+	+ funnyObj.url + "?_=" + (new Date().getTime()) + 
+	"\" HEIGHT=\""+ height +"\" WIDTH=\""+width+"\"/>");
+}
+
 function getPicURLs(amount) {
 //'http://www.reddit.com/r/earthporn.json?.jsonp?&limit=20'
 	if(funnyObjs.length==0)
@@ -228,19 +237,20 @@ function getPicURLs(amount) {
 	else
 	{
 		var img = new Image();
-		img.onload = function() {
-		//<div style="position: fixed; top: 0px; left: 0px; width: 400px; background-color: black; color: white; ">hello</div>
-		//This gets the actual image dimensions first
+		img.onload = function() 
+		{
+			//This gets the actual image dimensions first
+			makeSendHTML(funnyObjs[NextSequence],this.height,this.width);
+			NextSequence++;
+		}
 		
-		sendCmd("<div style=\"position: fixed; top: 4px; left: 26px; width: 1254px; background-color: black; color: white; \">"
-		+ funnyObjs[NextSequence].title 
-		+"</div><img src=\""
-		+ funnyObjs[NextSequence].url + 
-		"\" HEIGHT=\""+ this.height +"\" WIDTH=\""+this.width+"\"/>");
+		img.onerror = function() 
+		{
+			appendMessage("IMG Load error: " + this.src);
+			NextSequence++;
+		}
 		
-		NextSequence++;
-	}
-	img.src = funnyObjs[NextSequence++].url;	
+		img.src = funnyObjs[NextSequence].url;	
 
 	//sendCmd("<img src=\""+funnyObjs[NextSequence++].url+"\" HEIGHT=\"700\" WIDTH=\"1280\"/>");
 	}
@@ -264,8 +274,10 @@ function initPicsArray(amount)
 			}	
 		}		
 	});
+
 	//send the first picture once the array has been filled
-	sendCmd("<img src=\""+funnyObjs[NextSequence++].url+"\" HEIGHT=\"700\" WIDTH=\"1280\"/>");
+	makeSendHTML(funnyObjs[NextSequence],this.height,this.width);
+	NextSequence++;
   });
 }
 </script>
