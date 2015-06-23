@@ -29,9 +29,14 @@ import android.widget.ListView;
 
 
 public class MenuActivity extends ListActivity {
+	List<Post> mainFeed = new ArrayList<Post>();
 	private final int REQUEST_CODE = 100;
 	
-	private LocationManager lm;
+	public static String dataFromPost; // public static for convenience MUST CHANGE
+	
+	//---Create the adapter to convert the array to views---
+	PostAdapter adapter;
+	
 	private LocationListener locationListener;
 	
 	@Override
@@ -67,8 +72,7 @@ public class MenuActivity extends ListActivity {
 		//---Construct the data source---
 		ArrayList<PostNode> myList = pTree.getAllNodes();
 		
-		//---Create the adapter to convert the array to views---
-		PostAdapter adapter = new PostAdapter(this, myList);
+		adapter = new PostAdapter(this, myList);
 		
 		//---Attached adapter to a ListView---
 		ListView listView = (ListView) findViewById(android.R.id.list);
@@ -91,14 +95,8 @@ public class MenuActivity extends ListActivity {
 			
 		});	
 		
-		Button btnPost = (Button) findViewById(R.id.btnPost);
-		btnPost.setOnClickListener(new View.OnClickListener()
-		{
-			public void onClick(View v)
-			{
-				startActivityForResult(new Intent("com.AG.new_post"), REQUEST_CODE);
-			}
-		});
+		// Post Button
+		constructPostButton();
 
 	}
 	
@@ -140,5 +138,33 @@ public class MenuActivity extends ListActivity {
 		{
 		}
 	}
+	public void constructPostButton()
+	{
+		Button btnPost = (Button) findViewById(R.id.btnPost);
+		btnPost.setOnClickListener(new View.OnClickListener()
+		{
+			public void onClick(View v)
+			{
+				Intent postIntent = new Intent("com.AG.new_post");
+				postIntent.putExtra("postTextData", "");
+				setResult(Activity.RESULT_OK, postIntent);
+				startActivityForResult(postIntent, POST_INTENT_RETURN);
+			}
+		});
+	}
+	
+	public void onActivityResult(int requestCode, int resultCode, Intent data)
+    {
+        switch(requestCode)
+        {
+            case POST_INTENT_RETURN:
+                if(RESULT_OK == resultCode)
+                {
+                    dataFromPost = data.getStringExtra("postTextData");
+                    adapter.add(new PostNode(6, dataFromPost, R.drawable.pic5));
+                }
+                break;
+        }
+    }
 	
 }

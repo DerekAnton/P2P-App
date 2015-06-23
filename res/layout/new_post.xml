@@ -25,9 +25,12 @@
         android:id="@+id/btnPicture"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="Snap Pic" 
-    	android:layout_centerHorizontal="true"
-    	android:layout_alignParentBottom="true" />
+        android:text="Snap Pic"
+        android:layout_alignParentBottom="true"
+        android:layout_alignRight="@+id/postTxtBtn"
+        android:layout_alignEnd="@+id/postTxtBtn"
+        android:layout_alignLeft="@+id/postTxtBtn"
+        android:layout_alignStart="@+id/postTxtBtn" />
 
     <ImageView
         android:id="@+id/image1"
@@ -37,5 +40,37 @@
         android:layout_centerHorizontal="true"
         android:layout_marginTop="5dp"
         android:scaleType="center" />
+
+    <EditText
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:inputType="textMultiLine"
+        android:ems="10"
+        android:id="@+id/editText1"
+        android:layout_marginBottom="35dp"
+        android:layout_alignBottom="@+id/image1"
+        android:layout_alignLeft="@+id/image1"
+        android:layout_alignStart="@+id/image1"
+        android:layout_alignRight="@+id/image1"
+        android:layout_alignEnd="@+id/image1" />
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Enter your post"
+        android:id="@+id/textLabel1"
+        android:theme="@style/AppBaseTheme"
+        android:layout_above="@+id/editText1"
+        android:layout_alignLeft="@+id/postTxtBtn"
+        android:layout_alignStart="@+id/postTxtBtn"
+        android:layout_marginBottom="23dp" />
+
+    <Button
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Post Text"
+        android:id="@+id/postTxtBtn"
+        android:layout_above="@+id/btnPicture"
+        android:layout_centerHorizontal="true" />
 
 </RelativeLayout>

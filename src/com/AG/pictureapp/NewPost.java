@@ -13,6 +13,7 @@ import android.view.Menu;
 import android.view.MenuItem;
 import android.view.View;
 import android.widget.Button;
+import android.widget.EditText;
 import android.widget.Toast;
 import android.widget.ImageView;
 
@@ -27,54 +28,86 @@ public class NewPost extends Activity
 	Intent camera = new Intent(MediaStore.ACTION_IMAGE_CAPTURE);
 	
 	@Override
-	protected void onCreate(Bundle savedInstanceState) {
+	protected void onCreate(Bundle savedInstanceState)
+	{
 		super.onCreate(savedInstanceState);
 		setContentView(R.layout.new_post);
 
-		Log.d("Jeremy", "Made it to the NewPost onCreate");
-		
-		//set to stay portrait
+		// set to stay portrait
 		setRequestedOrientation(ActivityInfo.SCREEN_ORIENTATION_PORTRAIT);
 
+		// Snap a Picture Button
+		constructPictureButton();
+
+		// Cancel Button
+		constructCancelButton();
+
+		// Post Text Button
+		constructPostTextButton();
+	}
+
+	// Activities which have completed will execute the following code
+	public void onActivityResult(int requestCode, int resultCode, Intent data)
+	{
+        switch (requestCode)
+        {
+            case CAPTURE_IMAGE_ACTIVITY_REQUEST_CODE:
+                switch (resultCode)
+                {
+                    case RESULT_OK:
+                        imageView.setImageURI(data.getData());
+                        Toast.makeText(this, "Picture was saved to: " + data.getData(), Toast.LENGTH_SHORT).show();
+                        break;
+                    case RESULT_CANCELED:
+                        Toast.makeText(this, "Canceled Picture", Toast.LENGTH_SHORT).show();
+                        break;
+                    default:
+                        Toast.makeText(this, "An error occured with request code: " + resultCode, Toast.LENGTH_SHORT).show();
+                        break;
+                }
+                break;
+            default:
+                break;
+        }
+	}
+
+	public void constructPictureButton()
+	{
 		imageView = (ImageView) findViewById(R.id.image1);
 		Button btnPic = (Button) findViewById(R.id.btnPicture);
 		btnPic.setOnClickListener(new View.OnClickListener()
 		{
 			public void onClick(View v) {
-				
+
 				//File photo = new File(photoPath);
 				startActivityForResult(camera, CAPTURE_IMAGE_ACTIVITY_REQUEST_CODE);
 			}
 		});
-		
+	}
+	public void constructCancelButton()
+	{
 		Button btnCancel = (Button) findViewById(R.id.btnCancel);
 		btnCancel.setOnClickListener(new View.OnClickListener()
 		{
-			public void onClick(View v) 
+			public void onClick(View v)
 			{
-				
 				finish();
 			}
 		});
 	}
-
-	public void onActivityResult(int requestCode, int resultCode, Intent data)
+	public void constructPostTextButton()
 	{
-		if ( requestCode == CAPTURE_IMAGE_ACTIVITY_REQUEST_CODE )
+		Button btnPostText = (Button) findViewById(R.id.postTxtBtn);
+		btnPostText.setOnClickListener(new View.OnClickListener()
 		{
-			if ( resultCode == RESULT_OK )
+			public void onClick(View v)
 			{
-				imageView.setImageURI(data.getData());
-				Toast.makeText(this, "Picture was saved to: " + data.getData(), Toast.LENGTH_SHORT).show();
+				EditText userTxtInput = (EditText) findViewById(R.id.editText1);
+				Intent i = new Intent();
+				i.putExtra("postTextData", userTxtInput.getText().toString());
+				setResult(RESULT_OK, i);
+				finish();
 			}
-			else if ( resultCode == RESULT_CANCELED )
-			{
-				Toast.makeText(this, "Canceled Picture", Toast.LENGTH_SHORT).show();
-			}
-			else
-			{
-				Toast.makeText(this, "An error occured with request code: " + resultCode, Toast.LENGTH_SHORT).show();
-			}
-		}
+		});
 	}
 }
