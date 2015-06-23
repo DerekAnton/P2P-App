@@ -37,6 +37,16 @@
                     android:name="android.intent.category.DEFAULT" />
             </intent-filter>
         </activity>
+        <activity
+            android:name=".PostActivity"
+            android:label="@string/new_post_page_title">
+            <intent-filter>
+                <action
+                    android:name="com.AG.post_activity" />
+                <category
+                    android:name="android.intent.category.DEFAULT" />
+            </intent-filter>
+        </activity>
     </application>
 
 </manifest>

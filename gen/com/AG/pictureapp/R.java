@@ -12,20 +12,30 @@ public final class R {
     }
     public static final class drawable {
         public static final int ic_launcher=0x7f020000;
+        public static final int pic4=0x7f020001;
+        public static final int pic5=0x7f020002;
+        public static final int pic6=0x7f020003;
+        public static final int pic7=0x7f020004;
     }
     public static final class id {
-        public static final int RLayout=0x7f060002;
-        public static final int btnCancel=0x7f060004;
-        public static final int btnPicture=0x7f060005;
-        public static final int btnPost=0x7f060003;
-        public static final int image1=0x7f060006;
-        public static final int txtPostName=0x7f060001;
-        public static final int txtPostNum=0x7f060000;
+        public static final int RLayout=0x7f060006;
+        public static final int RLayoutItemPost=0x7f060000;
+        public static final int RLayoutMenu=0x7f060003;
+        public static final int btnBack=0x7f06000b;
+        public static final int btnCancel=0x7f060007;
+        public static final int btnGPS=0x7f060005;
+        public static final int btnPicture=0x7f060008;
+        public static final int btnPost=0x7f060004;
+        public static final int btnReply=0x7f06000a;
+        public static final int image1=0x7f060009;
+        public static final int imgPostPic=0x7f060001;
+        public static final int txtPostName=0x7f060002;
     }
     public static final class layout {
         public static final int item_post=0x7f030000;
         public static final int menu=0x7f030001;
         public static final int new_post=0x7f030002;
+        public static final int post_activity=0x7f030003;
     }
     public static final class string {
         public static final int app_name=0x7f040000;
