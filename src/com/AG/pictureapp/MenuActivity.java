@@ -28,9 +28,10 @@ import android.widget.ImageView;
 import android.widget.ListView;
 
 
-public class MenuActivity extends ListActivity {
-	List<Post> mainFeed = new ArrayList<Post>();
+public class MenuActivity extends ListActivity
+{
 	private final int REQUEST_CODE = 100;
+	private final int POST_INTENT_RETURN = 101;
 	
 	public static String dataFromPost; // public static for convenience MUST CHANGE
 	
@@ -43,8 +44,6 @@ public class MenuActivity extends ListActivity {
 	protected void onCreate(Bundle savedInstanceState) {
 		super.onCreate(savedInstanceState);
 		setContentView(R.layout.menu);
-		
-		lm = (LocationManager) getSystemService(Context.LOCATION_SERVICE);
 		
 		locationListener = new MyLocationListener();
 
@@ -103,7 +102,6 @@ public class MenuActivity extends ListActivity {
 	@Override
 	public void onPause()
 	{
-		lm.removeUpdates(locationListener);
 		super.onPause();
 	}
 

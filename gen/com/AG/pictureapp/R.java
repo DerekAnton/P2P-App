@@ -21,14 +21,17 @@ public final class R {
         public static final int RLayout=0x7f060006;
         public static final int RLayoutItemPost=0x7f060000;
         public static final int RLayoutMenu=0x7f060003;
-        public static final int btnBack=0x7f06000b;
+        public static final int btnBack=0x7f06000e;
         public static final int btnCancel=0x7f060007;
         public static final int btnGPS=0x7f060005;
         public static final int btnPicture=0x7f060008;
         public static final int btnPost=0x7f060004;
-        public static final int btnReply=0x7f06000a;
-        public static final int image1=0x7f060009;
+        public static final int btnReply=0x7f06000d;
+        public static final int editText1=0x7f06000b;
+        public static final int image1=0x7f06000a;
         public static final int imgPostPic=0x7f060001;
+        public static final int postTxtBtn=0x7f060009;
+        public static final int textLabel1=0x7f06000c;
         public static final int txtPostName=0x7f060002;
     }
     public static final class layout {
